@@ -28,7 +28,7 @@ async def start(client, message):
                     InlineKeyboardButton('👻 ᴍᴏᴠɪᴇ ᴄʜᴀɴɴᴇʟ', url="https://t.me/New_Moviee_hindi"),
                     InlineKeyboardButton('🫨 ᴍᴏᴠɪᴇ ɢʀᴏᴜᴘ', url=GRP_LNK)
                 ],[
-                    InlineKeyboardButton('🔻 ᴊᴏɪɴ ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇʟ 🔻', url=CHNL_LNK)
+                    InlinekeyboardButton('✨ʙᴜʏ sᴜʙsᴄʀɪᴘᴛɪᴏɴ✨', url=f'https://telegram.me/{temp.U_NAME}?start=buy')
                   ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply(script.START_TXT.format(message.from_user.mention if message.from_user else message.chat.title, temp.U_NAME, temp.B_NAME), reply_markup=reply_markup, disable_web_page_preview=True)
@@ -51,7 +51,7 @@ async def start(client, message):
                     InlineKeyboardButton('👻 ʜᴇʟᴘ', callback_data='help'),
                     InlineKeyboardButton('👾 ᴀʙᴏᴜᴛ', callback_data='about')
                 ],[
-                    InlineKeyboardButton('💰 ᴇᴀʀɴ ᴍᴏɴᴇʏ ᴡɪᴛʜ ʙᴏᴛ 💸', callback_data="shortlink_info")
+                    InlinekeyboardButton('✨ʙᴜʏ sᴜʙsᴄʀɪᴘᴛɪᴏɴ✨', url=f'https://telegram.me/{temp.U_NAME}?start=buy')
                   ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
@@ -99,7 +99,7 @@ async def start(client, message):
                     InlineKeyboardButton('👻 ʜᴇʟᴘ', callback_data='help'),
                     InlineKeyboardButton('👾 ʜᴇʟᴘ', callback_data='about')
                 ],[
-                    InlineKeyboardButton('💰 ᴇᴀʀɴ ᴍᴏɴᴇʏ ᴡɪᴛʜ ʙᴏᴛ 💸', callback_data="shortlink_info")
+                    InlinekeyboardButton('✨ʙᴜʏ sᴜʙsᴄʀɪᴘᴛɪᴏɴ✨', url=f'https://telegram.me/{temp.U_NAME}?start=buy')
                   ]]
         reply_markup = InlineKeyboardMarkup(buttons)      
         await message.reply_photo(
@@ -249,6 +249,20 @@ async def start(client, message):
                 text="<b>Invalid link or Expired link !</b>",
                 protect_content=True
             )
+
+if data.startswith("buy"):
+        btn = [            
+            [InlineKeyboardButton("✅sᴇɴᴅ ʏᴏᴜʀ ᴘᴀʏᴍᴇɴᴛ ʀᴇᴄᴇɪᴘᴛ ʜᴇʀᴇ✅", url="t.me/JNGohell")],
+            [InlineKeyboardButton("⚠️ᴄʟᴏsᴇ / ᴅᴇʟᴇᴛᴇ⚠️", callback_data="close_data")]
+        ]
+        reply_markup = InlineKeyboardMarkup(btn)
+        await message.reply_photo(
+            photo="https://telegra.ph/file/a64ea262d720ad03ef9e7.jpg",
+            caption="Price For Subscription\n1 Year Plan : 200\n6 months Plan : 100\nIf You want To Buy The Subscribtion Pay On This : jngohel@upi And Send Screenshot On Buy Button For Activating Your Subscribtion....",
+            reply_markup=reply_markup
+        )
+        return  
+    
     if data.startswith("sendfiles"):
         chat_id = int("-" + file_id.split("-")[1])
         userid = message.from_user.id if message.from_user else None
@@ -266,6 +280,8 @@ async def start(client, message):
                         InlineKeyboardButton('📁 ᴍᴏᴠɪᴇ ᴅᴏᴡɴʟᴏᴀᴅ ʟɪɴᴋ 📁', url=g)
                     ], [
                         InlineKeyboardButton('🤔 Hᴏᴡ Tᴏ Dᴏᴡɴʟᴏᴀᴅ 🤔', url=await get_tutorial(chat_id))
+                    ], [
+                        InlinekeyboardButton('✨ʙᴜʏ sᴜʙsᴄʀɪᴘᴛɪᴏɴ✨', url=f'https://telegram.me/{temp.U_NAME}?start=buy')
                     ]
                 ]
             )
@@ -284,9 +300,11 @@ async def start(client, message):
         k = await client.send_message(chat_id=user,text=f"<b>📕Nᴀᴍᴇ ➠ : <code>{files.file_name}</code> \n\n🔗Sɪᴢᴇ ➠ : {get_size(files.file_size)}\n\n📂Fɪʟᴇ ʟɪɴᴋ ➠ : {g}\n\n<i>Note: ⚠️ ᴛʜɪs ᴍᴇssᴀɢᴇ ᴡɪʟʟ ʙᴇ ᴀᴜᴛᴏ ᴅᴇʟᴇᴛᴇᴅ ᴀғᴛᴇʀ 𝟷𝟶 ᴍɪɴᴜᴛᴇs.</i></b>", reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton('📂 ᴍᴏᴠɪᴇ ᴅᴏᴡɴʟᴏᴀᴅ ʟɪɴᴋ 📂', url=g)
+                        InlineKeyboardButton('📁 ᴍᴏᴠɪᴇ ᴅᴏᴡɴʟᴏᴀᴅ ʟɪɴᴋ 📁', url=g)
                     ], [
                         InlineKeyboardButton('🤔 Hᴏᴡ Tᴏ Dᴏᴡɴʟᴏᴀᴅ 🤔', url=await get_tutorial(chat_id))
+                    ], [
+                        InlinekeyboardButton('✨ʙᴜʏ sᴜʙsᴄʀɪᴘᴛɪᴏɴ✨', url=f'https://telegram.me/{temp.U_NAME}?start=buy')
                     ]
                 ]
             )
@@ -332,15 +350,16 @@ async def start(client, message):
                 protect_content=True if pre == 'filep' else False,
                 reply_markup=InlineKeyboardMarkup(
                     [
-                     [
-                      InlineKeyboardButton('🫨ᴍᴏᴠɪᴇ ɢʀᴏᴜᴘ', url=f'https://t.me/{SUPPORT_CHAT}'),
-                      InlineKeyboardButton('Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ', url=CHNL_LNK)
-                   ],[
-                      InlineKeyboardButton("ᴍᴏᴠɪᴇ ʀᴇQᴜᴇꜱᴛ ɢʀᴏᴜᴘ", url="https://t.me/+4nzja42ELQwzOWVl")
-                     ]
+                    [
+                        InlineKeyboardButton('📁 ᴍᴏᴠɪᴇ ᴅᴏᴡɴʟᴏᴀᴅ ʟɪɴᴋ 📁', url=g)
+                    ], [
+                        InlineKeyboardButton('🤔 Hᴏᴡ Tᴏ Dᴏᴡɴʟᴏᴀᴅ 🤔', url=await get_tutorial(chat_id))
+                    ], [
+                        InlinekeyboardButton('✨ʙᴜʏ sᴜʙsᴄʀɪᴘᴛɪᴏɴ✨', url=f'https://telegram.me/{temp.U_NAME}?start=buy')
                     ]
-                )
+                ]
             )
+        )
             filesarr.append(msg)
         await k.edit_text("<b>Your All Files/Videos is successfully deleted!!!</b>")
         return    
