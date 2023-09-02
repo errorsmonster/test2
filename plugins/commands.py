@@ -250,7 +250,7 @@ async def start(client, message):
                 protect_content=True
             )
 
-if data.startswith("buy"):
+   if data.startswith("buy"):
         btn = [            
             [InlineKeyboardButton("✅sᴇɴᴅ ʏᴏᴜʀ ᴘᴀʏᴍᴇɴᴛ ʀᴇᴄᴇɪᴘᴛ ʜᴇʀᴇ✅", url="t.me/JNGohell")],
             [InlineKeyboardButton("⚠️ᴄʟᴏsᴇ / ᴅᴇʟᴇᴛᴇ⚠️", callback_data="close_data")]
