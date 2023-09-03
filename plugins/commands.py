@@ -30,7 +30,7 @@ async def start(client, message):
                     InlineKeyboardButton('HELP', callback_data='help'),
                     InlineKeyboardButton('ABOUT', callback_data='about')
                 ],[
-                    InlineKeyboardButton('✨ BUY SUBSCRIPTION ✨', callback_data='shortlink_info')
+                    InlineKeyboardButton('✨ BUY SUBSCRIPTION ✨', url=f'https://telegram.me/{temp.U_NAME}?start=buy')
                   ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply(script.START_TXT.format(message.from_user.mention if message.from_user else message.chat.title, temp.U_NAME, temp.B_NAME), reply_markup=reply_markup, disable_web_page_preview=True)
@@ -52,7 +52,7 @@ async def start(client, message):
                     InlineKeyboardButton('HELP', callback_data='help'),
                     InlineKeyboardButton('ABOUT', callback_data='about')
                 ],[
-                    InlineKeyboardButton('✨ BUY SUBSCRIPTION ✨', callback_data='shortlink_info')
+                    InlineKeyboardButton('✨ BUY SUBSCRIPTION ✨', url=f'https://telegram.me/{temp.U_NAME}?start=buy')
                   ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
@@ -99,7 +99,7 @@ async def start(client, message):
                     InlineKeyboardButton('HELP', callback_data='help'),
                     InlineKeyboardButton('ABOUT', callback_data='about')
                 ],[
-                    InlineKeyboardButton('✨ BUY SUBSCRIPTION ✨', callback_data='shortlink_info')
+                    InlineKeyboardButton('✨ BUY SUBSCRIPTION ✨', url=f'https://telegram.me/{temp.U_NAME}?start=buy')
                   ]]
         reply_markup = InlineKeyboardMarkup(buttons)      
         await message.reply_photo(
@@ -249,7 +249,20 @@ async def start(client, message):
                 text="<b>Invalid link or Expired link !</b>",
                 protect_content=True
             )
-    
+   
+    if data.startswith("buy"):
+        btn = [            
+            [InlineKeyboardButton("✅sᴇɴᴅ ʏᴏᴜʀ ᴘᴀʏᴍᴇɴᴛ ʀᴇᴄᴇɪᴘᴛ ʜᴇʀᴇ✅", url="t.me/JNGohell")],
+            [InlineKeyboardButton("⚠️ᴄʟᴏsᴇ / ᴅᴇʟᴇᴛᴇ⚠️", callback_data="close_data")]
+        ]
+        reply_markup = InlineKeyboardMarkup(btn)
+        await message.reply_photo(
+            photo="https://telegra.ph/file/a64ea262d720ad03ef9e7.jpg",
+            caption="Price For Subscription\n1 Year Plan : 200\n6 months Plan : 100\nIf You want To Buy The Subscribtion Pay On This : jngohel@upi And Send Screenshot On Buy Button For Activating Your Subscribtion....",
+            reply_markup=reply_markup
+        )
+        return
+          
     if data.startswith("sendfiles"):
         chat_id = int("-" + file_id.split("-")[1])
         userid = message.from_user.id if message.from_user else None
