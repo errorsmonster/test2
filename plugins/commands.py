@@ -22,7 +22,7 @@ BATCH_FILES = {}
 @Client.on_message(filters.command("start") & filters.incoming)
 async def start(client, message):
     if message.chat.type in [enums.ChatType.GROUP, enums.ChatType.SUPERGROUP]:
-        buttons = [[
+        buttons = [
                     InlineKeyboardButton('➕ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
                 ],[
                     InlineKeyboardButton('🔱 MY GROUP 🔱', url= 'https://t.me/FoxyMoviesOfficial')
@@ -278,9 +278,10 @@ async def start(client, message):
                 [
                     [
                         InlineKeyboardButton('📁 ᴍᴏᴠɪᴇ ᴅᴏᴡɴʟᴏᴀᴅ ʟɪɴᴋ 📁', url=g),
+                    ], [   
                         InlineKeyboardButton('🤔 Hᴏᴡ Tᴏ Dᴏᴡɴʟᴏᴀᴅ 🤔', url=await get_tutorial(chat_id))
                     ], [
-                        InlinekeyboardButton('✨ʙᴜʏ sᴜʙsᴄʀɪᴘᴛɪᴏɴ✨', callback_data="shortlink_info")
+                        InlinekeyboardButton('✨ʙᴜʏ sᴜʙsᴄʀɪᴘᴛɪᴏɴ✨', url=f"https://telegram.me/{temp.U_NAME}?start=buy")
                     ]
                 ]
             )
@@ -303,7 +304,7 @@ async def start(client, message):
                     ], [
                         InlineKeyboardButton('🤔 Hᴏᴡ Tᴏ Dᴏᴡɴʟᴏᴀᴅ 🤔', url=await get_tutorial(chat_id))
                     ], [
-                        InlinekeyboardButton('✨ʙᴜʏ sᴜʙsᴄʀɪᴘᴛɪᴏɴ✨', url=f'https://telegram.me/{temp.U_NAME}?start=buy')
+                        InlinekeyboardButton('✨ʙᴜʏ sᴜʙsᴄʀɪᴘᴛɪᴏɴ✨', url=f"https://telegram.me/{temp.U_NAME}?start=buy")
                     ]
                 ]
             )
@@ -351,9 +352,10 @@ async def start(client, message):
                     [
                     [
                         InlineKeyboardButton('📁 ᴍᴏᴠɪᴇ ᴅᴏᴡɴʟᴏᴀᴅ ʟɪɴᴋ 📁', url=g),
+                    ], [   
                         InlineKeyboardButton('🤔 Hᴏᴡ Tᴏ Dᴏᴡɴʟᴏᴀᴅ 🤔', url=await get_tutorial(chat_id))
                     ], [
-                        InlinekeyboardButton('✨ʙᴜʏ sᴜʙsᴄʀɪᴘᴛɪᴏɴ✨', callback_data="shortlink_info")
+                        InlinekeyboardButton('✨ʙᴜʏ sᴜʙsᴄʀɪᴘᴛɪᴏɴ✨', url=f"https://telegram.me/{temp.U_NAME}?start=buy")
                     ]
                 ]
             )
@@ -377,9 +379,10 @@ async def start(client, message):
                     [
                     [
                         InlineKeyboardButton('📁 ᴍᴏᴠɪᴇ ᴅᴏᴡɴʟᴏᴀᴅ ʟɪɴᴋ 📁', url=g),
+                    ], [  
                         InlineKeyboardButton('🤔 Hᴏᴡ Tᴏ Dᴏᴡɴʟᴏᴀᴅ 🤔', url=await get_tutorial(chat_id))
                     ], [     
-                        InlinekeyboardButton('✨ʙᴜʏ sᴜʙsᴄʀɪᴘᴛɪᴏɴ✨', url=f'https://telegram.me/{temp.U_NAME}?start=buy')
+                        InlinekeyboardButton('✨ʙᴜʏ sᴜʙsᴄʀɪᴘᴛɪᴏɴ✨', url=f"https://telegram.me/{temp.U_NAME}?start=buy")
                     ]
                 ]
             )
