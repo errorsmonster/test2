@@ -30,7 +30,7 @@ async def start(client, message):
                     InlineKeyboardButton('HELP', callback_data='help'),
                     InlineKeyboardButton('ABOUT', callback_data='about')
                 ],[
-                    InlineKeyboardButton('✨ BUY SUBSCRIPTION ✨', callback_data="plugins_buy")
+                    InlineKeyboardButton('✨ BUY SUBSCRIPTION ✨', https://telegram.me/{temp.U_NAME}?start=buy')
                   ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply(script.START_TXT.format(message.from_user.mention if message.from_user else message.chat.title, temp.U_NAME, temp.B_NAME), reply_markup=reply_markup, disable_web_page_preview=True)
@@ -52,7 +52,7 @@ async def start(client, message):
                     InlineKeyboardButton('HELP', callback_data='help'),
                     InlineKeyboardButton('ABOUT', callback_data='about')
                 ],[
-                    InlineKeyboardButton('✨ BUY SUBSCRIPTION ✨', callback_data="plugins_buy")
+                    InlineKeyboardButton('✨ BUY SUBSCRIPTION ✨', https://telegram.me/{temp.U_NAME}?start=buy')
                   ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
@@ -99,7 +99,7 @@ async def start(client, message):
                     InlineKeyboardButton('HELP', callback_data='help'),
                     InlineKeyboardButton('ABOUT', callback_data='about')
                 ],[
-                    InlineKeyboardButton('✨ BUY SUBSCRIPTION ✨', callback_data="plugins_buy")
+                    InlineKeyboardButton('✨ BUY SUBSCRIPTION ✨', https://telegram.me/{temp.U_NAME}?start=buy')
                   ]]
         reply_markup = InlineKeyboardMarkup(buttons)      
         await message.reply_photo(
@@ -300,6 +300,7 @@ async def start(client, message):
                 [
                     [
                         InlineKeyboardButton('📁 ᴍᴏᴠɪᴇ ᴅᴏᴡɴʟᴏᴀᴅ ʟɪɴᴋ 📁', url=g),
+                    ], [
                         InlineKeyboardButton('🤔 Hᴏᴡ Tᴏ Dᴏᴡɴʟᴏᴀᴅ 🤔', url=await get_tutorial(chat_id))
                     ], [
                         InlinekeyboardButton('✨ʙᴜʏ sᴜʙsᴄʀɪᴘᴛɪᴏɴ✨', url=f'https://telegram.me/{temp.U_NAME}?start=buy')
