@@ -52,7 +52,7 @@ async def start(client, message):
                     InlineKeyboardButton('HELP', callback_data='help'),
                     InlineKeyboardButton('ABOUT', callback_data='about')
                 ],[
-                    InlineKeyboardButton('✨ BUY SUBSCRIPTION ✨', https://telegram.me/{temp.U_NAME}?start=buy')
+                    InlineKeyboardButton('✨ʙᴜʏ sᴜʙsᴄʀɪᴘᴛɪᴏɴ✨', url=f'https://telegram.me/{temp.U_NAME}?start=buy')
                   ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
@@ -99,7 +99,7 @@ async def start(client, message):
                     InlineKeyboardButton('HELP', callback_data='help'),
                     InlineKeyboardButton('ABOUT', callback_data='about')
                 ],[
-                    InlineKeyboardButton('✨ BUY SUBSCRIPTION ✨', https://telegram.me/{temp.U_NAME}?start=buy')
+                    InlineKeyboardButton('✨ʙᴜʏ sᴜʙsᴄʀɪᴘᴛɪᴏɴ✨', url=f'https://telegram.me/{temp.U_NAME}?start=buy')
                   ]]
         reply_markup = InlineKeyboardMarkup(buttons)      
         await message.reply_photo(
