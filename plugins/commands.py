@@ -45,8 +45,8 @@ async def start(client, message):
         buttons = [[
                     InlineKeyboardButton('➕ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
                 ],[
-                    InlineKeyboardButton('HELP', callback_data='help'),
-                    InlineKeyboardButton('ABOUT', callback_data='about')
+                    InlineKeyboardButton('👻 ʜᴇʟᴘ', callback_data='help'),
+                    InlineKeyboardButton('👾 ᴀʙᴏᴜᴛ', callback_data='about')
                 ],[
                     InlineKeyboardButton('✨ʙᴜʏ sᴜʙsᴄʀɪᴘᴛɪᴏɴ✨', url=f'https://telegram.me/{temp.U_NAME}?start=buy')
                   ]]
@@ -90,10 +90,8 @@ async def start(client, message):
         buttons = [[
                     InlineKeyboardButton('➕ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
                 ],[
-                    InlineKeyboardButton('🔱 MY GROUP 🔱', url= 'https://t.me/FoxyMoviesOfficial')
-                ],[
-                    InlineKeyboardButton('HELP', callback_data='help'),
-                    InlineKeyboardButton('ABOUT', callback_data='about')
+                    InlineKeyboardButton('👻 ʜᴇʟᴘ', callback_data='help'),
+                    InlineKeyboardButton('👾 ᴀʙᴏᴜᴛ', callback_data='about')
                 ],[
                     InlineKeyboardButton('✨ʙᴜʏ sᴜʙsᴄʀɪᴘᴛɪᴏɴ✨', url=f'https://telegram.me/{temp.U_NAME}?start=buy')
                   ]]
@@ -248,13 +246,13 @@ async def start(client, message):
    
     if data.startswith("buy"):
         btn = [            
-            [InlineKeyboardButton("✅sᴇɴᴅ ʏᴏᴜʀ ᴘᴀʏᴍᴇɴᴛ ʀᴇᴄᴇɪᴘᴛ ʜᴇʀᴇ✅", url="t.me/JNGohell")],
+            [InlineKeyboardButton("✅sᴇɴᴅ ʏᴏᴜʀ ᴘᴀʏᴍᴇɴᴛ ʀᴇᴄᴇɪᴘᴛ ʜᴇʀᴇ✅", url="t.me/J_shree_ram")],
             [InlineKeyboardButton("⚠️ᴄʟᴏsᴇ / ᴅᴇʟᴇᴛᴇ⚠️", callback_data="close_data")]
         ]
         reply_markup = InlineKeyboardMarkup(btn)
         await message.reply_photo(
-            photo="https://telegra.ph/file/a64ea262d720ad03ef9e7.jpg",
-            caption="Price For Subscription\n1 Year Plan : 200\n6 months Plan : 100\nIf You want To Buy The Subscribtion Pay On This : jngohel@upi And Send Screenshot On Buy Button For Activating Your Subscribtion....",
+            photo="https://telegra.ph/file/396603289d216244b270b.jpg",
+            caption="⚡️Buy Premium Now\n ╭━━━━━━━━╮\n Premium Plans\n • ₹10 - 1 day (Trial)\n • ₹25 - 1 Week (Trial)\n • ₹50 - 1 Month\n • ₹120 - 3 Months\n • ₹220 - 6 Months\n • ₹400 - 1 Year\n ╰━━━━━━━━╯\n Premium Features ♤ᵀ&ᶜ\n ☆ New/Old Movies and Series\n ☆ High Quality available\n ☆ Get Files Directly\n ☆ High speed Download links\n ☆ Full Admin support\n ☆ Request will be completed in 1 hour if available.\n\n ⚠️Send SS After Payment⚠️\n ~ After sending a Screenshot please give us some time to add you in the premium version.",
             reply_markup=reply_markup
         )
         return
