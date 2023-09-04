@@ -252,7 +252,7 @@ async def start(client, message):
         reply_markup = InlineKeyboardMarkup(btn)
         await message.reply_photo(
             photo="https://telegra.ph/file/396603289d216244b270b.jpg",
-            caption="⚡️Buy Premium Now\n ╭━━━━━━━━╮\n Premium Plans\n • ₹10 - 1 day (Trial)\n • ₹25 - 1 Week (Trial)\n • ₹50 - 1 Month\n • ₹120 - 3 Months\n • ₹220 - 6 Months\n • ₹400 - 1 Year\n ╰━━━━━━━━╯\n Premium Features ♤ᵀ&ᶜ\n ☆ New/Old Movies and Series\n ☆ High Quality available\n ☆ Get Files Directly\n ☆ High speed Download links\n ☆ Full Admin support\n ☆ Request will be completed in 1 hour if available.\n\n ⚠️Send SS After Payment⚠️\n ~ After sending a Screenshot please give us some time to add you in the premium version.",
+            caption="⚡️Buy Premium Now\n ╭━━━━━━━━╮\n Premium Plans\n • ₹10 - 1 day (Trial)\n • ₹25 - 1 Week (Trial)\n • ₹50 - 1 Month\n • ₹120 - 3 Months\n • ₹220 - 6 Months\n • ₹400 - 1 Year\n ╰━━━━━━━━╯\n Premium Features ♤ᵀ&ᶜ\n ☆ New/Old Movies and Series\n ☆ High Quality available\n ☆ Get Files Directly\n ☆ High speed Download links\n ☆ Full Admin support\n ☆ Request will be completed in 1 hour if available.\n\n ⚠️Send SS After Payment⚠️\n\n ~ After sending a Screenshot please give us some time to add you in the premium version.",
             reply_markup=reply_markup
         )
         return
@@ -275,7 +275,7 @@ async def start(client, message):
                         ], [   
                            InlineKeyboardButton('🤔 Hᴏᴡ Tᴏ Dᴏᴡɴʟᴏᴀᴅ 🤔', url=await get_tutorial(chat_id))
                         ], [
-                           InlinekeyboardButton('✨ʙᴜʏ sᴜʙsᴄʀɪᴘᴛɪᴏɴ✨', callback_data="shortlink_info")
+                           InlinekeyboardButton('✨ʙᴜʏ sᴜʙsᴄʀɪᴘᴛɪᴏɴ✨', url=f'https://telegram.me/{temp.U_NAME}?start=buy')
                     ]
                 ]
             )
@@ -298,7 +298,7 @@ async def start(client, message):
                     ], [
                         InlineKeyboardButton('🤔 Hᴏᴡ Tᴏ Dᴏᴡɴʟᴏᴀᴅ 🤔', url=await get_tutorial(chat_id))
                     ], [
-                        InlinekeyboardButton('✨ʙᴜʏ sᴜʙsᴄʀɪᴘᴛɪᴏɴ✨', callback_data='buy')
+                        InlinekeyboardButton('✨ʙᴜʏ sᴜʙsᴄʀɪᴘᴛɪᴏɴ✨', url=f'https://telegram.me/{temp.U_NAME}?start=buy')
                 ]
             ]
         )
@@ -375,7 +375,7 @@ async def start(client, message):
                     ], [  
                         InlineKeyboardButton('🤔 Hᴏᴡ Tᴏ Dᴏᴡɴʟᴏᴀᴅ 🤔', url=await get_tutorial(chat_id))
                     ], [     
-                        InlinekeyboardButton('✨ʙᴜʏ sᴜʙsᴄʀɪᴘᴛɪᴏɴ✨', callback_data="shortlink_info")
+                        InlinekeyboardButton('✨ʙᴜʏ sᴜʙsᴄʀɪᴘᴛɪᴏɴ✨', url=f'https://telegram.me/{temp.U_NAME}?start=buy')
                     ]
                 ]
             )
