@@ -297,14 +297,14 @@ async def start(client, message):
                 [
                     [
                         InlineKeyboardButton('📁 ᴍᴏᴠɪᴇ ᴅᴏᴡɴʟᴏᴀᴅ ʟɪɴᴋ 📁', url=g)
-                    ], [
-                        InlineKeyboardButton('🤔 Hᴏᴡ Tᴏ Dᴏᴡɴʟᴏᴀᴅ 🤔', url=await get_tutorial(chat_id))
-                    ], [
-                        InlinekeyboardButton('✨ʙᴜʏ sᴜʙsᴄʀɪᴘᴛɪᴏɴ✨', url=f'https://telegram.me/{temp.U_NAME}?start=buy')
-                       ]
-                      ]
-                 )
-             )
+                        ], [   
+                           InlineKeyboardButton('🤔 Hᴏᴡ Tᴏ Dᴏᴡɴʟᴏᴀᴅ 🤔', url=await get_tutorial(chat_id)
+                        ], [
+                           InlinekeyboardButton("✨ʙᴜʏ sᴜʙsᴄʀɪᴘᴛɪᴏɴ✨", url=f'https://telegram.me/{temp.U_NAME}?start=buy")
+                    ]
+                ]
+            )
+        )
         await asyncio.sleep(600)
         await k.edit("<b>Your message is successfully deleted!!!</b>")
         return
