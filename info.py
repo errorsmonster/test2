@@ -15,7 +15,7 @@ def is_enabled(value, default):
 SESSION = environ.get('SESSION', 'Media_search')
 API_ID = int(environ.get('API_ID', '29362464'))
 API_HASH = environ.get('API_HASH', '31973315b0872a0478886de31a1e4848')
-BOT_TOKEN = environ.get('BOT_TOKEN', "6107621055:AAH9-32kWc27MG61mEVMydEsidMzBxhoHl8")
+BOT_TOKEN = environ.get('BOT_TOKEN', "6165455939:AAGbM1cbNpjbbmxdbZIT1RSNJ8nY6_yP63U")
 
 # Bot settings
 CACHE_TIME = int(environ.get('CACHE_TIME', 300))
@@ -31,7 +31,7 @@ ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ
 CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '').split()]
 auth_users = [int(user) if id_pattern.search(user) else user for user in environ.get('AUTH_USERS', '').split()]
 AUTH_USERS = (auth_users + ADMINS) if auth_users else []
-PREMIUM_USER = [int(user) if id_pattern.search(user) else user for user in environ.get('PREMIUM_USER', '5651594253').split()]
+PREMIUM_USER = [int(user) if id_pattern.search(user) else user for user in environ.get('PREMIUM_USER', '').split()]
 auth_channel = environ.get('AUTH_CHANNEL')
 auth_grp = environ.get('AUTH_GROUP')
 AUTH_CHANNEL = int(auth_channel) if auth_channel and id_pattern.search(auth_channel) else None
@@ -47,12 +47,18 @@ DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://Omnifly:money@cluster0
 DATABASE_NAME = environ.get('DATABASE_NAME', "sawn")
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
 
+#stream feauter
+STREAM_BIN = environ.get("STREAM_BIN", "") #Log channel/Bin Channel id -100xxxxxxx
+STREAM_URL = environ.get("STREAM_URL", "") # https://example.com/ (Your Stream Url)
+IS_STREAM = bool(STREAM_BIN and STREAM_URL)
+#Use this feature, if you have deployed file to link bot. paste the app url with stream url and add filter bot as admin in bin channel and add id in stream bin
+
 # Others
 VERIFY = bool(environ.get('VERIFY', False))
-SHORTLINK_URL = environ.get('SHORTLINK_URL', 'TinyFy.in')
-SHORTLINK_API = environ.get('SHORTLINK_API', '8f29e4130ed3439c4c5cfc5c56dae86c0aff0daa')
-SECOND_SHORTLINK_URL = environ.get('SECOND_SHORTLINK_URL', 'TinyFy.in')
-SECOND_SHORTLINK_API = environ.get('SECOND_SHORTLINK_API', '8f29e4130ed3439c4c5cfc5c56dae86c0aff0daa')
+SHORTLINK_URL = environ.get('SHORTLINK_URL', 'Zxlink.in')
+SHORTLINK_API = environ.get('SHORTLINK_API', '4205ff425fade7343f8fd9cc79dce620cac4b01f')
+SECOND_SHORTLINK_URL = environ.get('SECOND_SHORTLINK_URL', 'Zxlink.in')
+SECOND_SHORTLINK_API = environ.get('SECOND_SHORTLINK_API', '4205ff425fade7343f8fd9cc79dce620cac4b01f')
 IS_SHORTLINK = bool(environ.get('IS_SHORTLINK', True))
 DELETE_CHANNELS = [int(dch) if id_pattern.search(dch) else dch for dch in environ.get('DELETE_CHANNELS', '0').split()]
 MAX_B_TN = environ.get("MAX_B_TN", "5")
@@ -60,12 +66,12 @@ MAX_BTN = is_enabled((environ.get('MAX_BTN', "True")), True)
 PORT = environ.get("PORT", "8080")
 GRP_LNK = environ.get('GRP_LNK', 'https://t.me/+M58gfU0jDOc3YjFl')
 CHNL_LNK = environ.get('CHNL_LNK', 'https://t.me/bot_channel_011')
-TUTORIAL = environ.get('TUTORIAL', 'https://t.me/+W5plh7_tP19lZjg1')
+TUTORIAL = environ.get('TUTORIAL', 'https://t.me/+dysmJ1DLQDFmNWY1')
 IS_TUTORIAL = bool(environ.get('IS_TUTORIAL', True))
 MSG_ALRT = environ.get('MSG_ALRT', 'Wʜᴀᴛ Aʀᴇ Yᴏᴜ Lᴏᴏᴋɪɴɢ Aᴛ ?')
 LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '-1001765670990'))
-SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'Action_Movies_Group')
-P_TTI_SHOW_OFF = is_enabled((environ.get('P_TTI_SHOW_OFF', "False")), False)
+SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'NewMovie1stOnTG')
+P_TTI_SHOW_OFF = is_enabled((environ.get('P_TTI_SHOW_OFF', "True")), True)
 IMDB = is_enabled((environ.get('IMDB', "False")), False)
 AUTO_FFILTER = is_enabled((environ.get('AUTO_FFILTER', "True")), True)
 AUTO_DELETE = is_enabled((environ.get('AUTO_DELETE', "True")), True)
