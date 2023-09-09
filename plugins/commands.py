@@ -244,7 +244,7 @@ async def start(client, message):
                 protect_content=True
             )
  
-      if data.startswith("buy"):
+    if data.startswith("buy"):
         btn = [            
             [InlineKeyboardButton("✅sᴇɴᴅ ʏᴏᴜʀ ᴘᴀʏᴍᴇɴᴛ ʀᴇᴄᴇɪᴘᴛ ʜᴇʀᴇ✅", url="t.me/J_shree_ram")],
             [InlineKeyboardButton("⚠️ᴄʟᴏsᴇ / ᴅᴇʟᴇᴛᴇ⚠️", callback_data="close_data")]
