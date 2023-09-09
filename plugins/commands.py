@@ -394,10 +394,10 @@ async def start(client, message):
             chat_id=message.from_user.id,
             text=f"<b>Get All Files in a Single Click!!!\n\n📂 ʟɪɴᴋ ➠ : {g}\n\n<i>Note: This message is deleted in 5 mins to avoid copyrights. Save the link to Somewhere else</i></b>",
             reply_markup=InlineKeyboardMarkup(kdbotz)
-            )
+        )
             await asyncio.sleep(1200)
             await k.edit("<b>Your message is successfully deleted!!!</b>")
-            return
+            return    
     user = message.from_user.id
     files_ = await get_file_details(file_id)           
     if not files_:
