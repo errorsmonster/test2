@@ -398,6 +398,7 @@ async def start(client, message):
             await asyncio.sleep(1200)
             await k.edit("<b>Your message is successfully deleted!!!</b>")
             return    
+    
     user = message.from_user.id
     files_ = await get_file_details(file_id)           
     if not files_:
