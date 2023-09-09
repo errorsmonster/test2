@@ -43,7 +43,7 @@ async def start(client, message):
         await client.send_message(LOG_CHANNEL, script.LOG_TEXT_P.format(message.from_user.id, message.from_user.mention))
     if len(message.command) != 2:
         buttons = [[
-                    InlineKeyboardButton('⤬ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ ⤬', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
+                    InlineKeyboardButton('➕ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
                 ],[
                     InlineKeyboardButton('👻 ʜᴇʟᴘ', callback_data='help'),
                     InlineKeyboardButton('👾 ᴀʙᴏᴜᴛ', callback_data='about')
@@ -51,6 +51,9 @@ async def start(client, message):
                     InlineKeyboardButton('✨ʙᴜʏ sᴜʙsᴄʀɪᴘᴛɪᴏɴ ʀᴇᴍᴏᴠᴇ ᴀᴅ✨', url=f'https://telegram.me/{temp.U_NAME}?start=buy')
                   ]]
         reply_markup = InlineKeyboardMarkup(buttons)
+        m=await message.reply_sticker("CAACAgIAAxkBAAEKF4dkyyjh2A-Vyqd7Ccr8LGxI7GlhnwACvAADMNSdEXeZnhCL0nOiHgQ") 
+        await asyncio.sleep(1)
+        await m.delete()
         await message.reply_photo(
             photo=random.choice(PICS),
             caption=script.START_TXT.format(message.from_user.mention, temp.U_NAME, temp.B_NAME),
@@ -67,7 +70,7 @@ async def start(client, message):
         btn = [
             [
                 InlineKeyboardButton(
-                    "🔻 ᴊᴏɪɴ ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇʟ 🔻", url=invite_link.invite_link
+                    "Jᴏɪɴ Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ", url=invite_link.invite_link
                 )
             ]
         ]
@@ -76,19 +79,19 @@ async def start(client, message):
             try:
                 kk, file_id = message.command[1].split("_", 1)
                 pre = 'checksubp' if kk == 'filep' else 'checksub' 
-                btn.append([InlineKeyboardButton("↻ Tʀʏ Aɢᴀɪɴ", callback_data=f"{pre}#{file_id}")])
+                btn.append([InlineKeyboardButton(" 🔄 Try Again", callback_data=f"{pre}#{file_id}")])
             except (IndexError, ValueError):
-                btn.append([InlineKeyboardButton("↻ Tʀʏ Aɢᴀɪɴ", url=f"https://t.me/{temp.U_NAME}?start={message.command[1]}")])
+                btn.append([InlineKeyboardButton(" 🔄 Try Again", url=f"https://t.me/{temp.U_NAME}?start={message.command[1]}")])
         await client.send_message(
             chat_id=message.from_user.id,
-            text="**You are not in our channel given below so you don't get the movie file...\n\nIf you want the movie file, click on the '🍿ᴊᴏɪɴ ᴏᴜʀ ʙᴀᴄᴋ-ᴜᴘ ᴄʜᴀɴɴᴇʟ🍿' button below and join our back-up channel, then click on the '🔄 Try Again' button below...\n\nThen you will get the movie files...**",
+            text="**🌟Jᴏɪɴ Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ\n🌟Cᴀᴍᴇ Bᴀᴄᴋ Aɴᴅ Cʟɪᴄᴋ Tʀʏ Aɢᴀɪɴ\n🌟Yᴏᴜ Wɪʟʟ Gᴇᴛ Yᴏᴜʀ Fɪʟᴇs 👍🏻**",
             reply_markup=InlineKeyboardMarkup(btn),
             parse_mode=enums.ParseMode.MARKDOWN
             )
         return
     if len(message.command) == 2 and message.command[1] in ["subscribe", "error", "okay", "help"]:
         buttons = [[
-                    InlineKeyboardButton('⤬ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ ⤬', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
+                    InlineKeyboardButton('➕ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
                 ],[
                     InlineKeyboardButton('👻 ʜᴇʟᴘ', callback_data='help'),
                     InlineKeyboardButton('👾 ᴀʙᴏᴜᴛ', callback_data='about')
@@ -110,7 +113,7 @@ async def start(client, message):
         file_id = data
         pre = ""
     if data.split("-", 1)[0] == "BATCH":
-        sts = await message.reply("<b>Please wait...</b>")
+        sts = await message.reply("Please wait")
         file_id = data.split("-", 1)[1]
         msgs = BATCH_FILES.get(file_id)
         if not msgs:
@@ -136,6 +139,15 @@ async def start(client, message):
             if f_caption is None:
                 f_caption = f"{title}"
             try:
+                await client.send_cached_media(
+                    chat_id=message.from_user.id,
+                    file_id=msg.get("file_id"),
+                    caption=f_caption,
+                    protect_content=msg.get('protect', False),
+                    )
+            except FloodWait as e:
+                await asyncio.sleep(e.x)
+                logger.warning(f"Floodwait of {e.x} sec.")
                 await client.send_cached_media(
                     chat_id=message.from_user.id,
                     file_id=msg.get("file_id"),
@@ -227,6 +239,9 @@ async def start(client, message):
         userid = data.split("-", 2)[1]
         token = data.split("-", 3)[2]
         if str(message.from_user.id) != str(userid):
+            btn = [[
+                    InlineKeyboardButton("Get File", url=f"https://telegram.me/{temp.U_NAME}?start=files_{fileid}")
+                ]]
             return await message.reply_text(
                 text="<b>Invalid link or Expired link !</b>",
                 protect_content=True
@@ -243,7 +258,7 @@ async def start(client, message):
                 text="<b>Invalid link or Expired link !</b>",
                 protect_content=True
             )
- 
+
     if data.startswith("buy"):
         btn = [            
             [InlineKeyboardButton("✅sᴇɴᴅ ʏᴏᴜʀ ᴘᴀʏᴍᴇɴᴛ ʀᴇᴄᴇɪᴘᴛ ʜᴇʀᴇ✅", url="t.me/J_shree_ram")],
@@ -256,7 +271,7 @@ async def start(client, message):
             reply_markup=reply_markup
         )
         return
-    
+
     if data.startswith("sendfiles"):
         chat_id = int("-" + file_id.split("-")[1])
         userid = message.from_user.id if message.from_user else None
@@ -297,12 +312,12 @@ async def start(client, message):
                    InlineKeyboardButton('🤔 Hᴏᴡ Tᴏ Dᴏᴡɴʟᴏᴀᴅ 🤔', url=await get_tutorial(chat_id))
                  ],[
                    InlineKeyboardButton('✨ʙᴜʏ sᴜʙsᴄʀɪᴘᴛɪᴏɴ ʀᴇᴍᴏᴠᴇ ᴀᴅ✨', url=f'https://telegram.me/{temp.U_NAME}?start=buy')
-                 ]]            
+                 ]]
         k = await client.send_message(
-            chat_id=message.from_user.id,
-            text=f"<b>Get All Files in a Single Click!!!\n\n📂 ʟɪɴᴋ ➠ : {g}\n\n<i>Note: This message is deleted in 5 mins to avoid copyrights. Save the link to Somewhere else</i></b>",
+            chat_id=user,
+            text=f"<b>📕Nᴀᴍᴇ ➠ : <code>{files.file_name}</code> \n\n🔗Sɪᴢᴇ ➠ : {get_size(files.file_size)}\n\n📂Fɪʟᴇ ʟɪɴᴋ ➠ : {g}\n\n<i>Note: ⚠️ ᴛʜɪs ᴍᴇssᴀɢᴇ ᴡɪʟʟ ʙᴇ ᴀᴜᴛᴏ ᴅᴇʟᴇᴛᴇᴅ ᴀғᴛᴇʀ 𝟷𝟶 ᴍɪɴᴜᴛᴇs.</i></b>",
             reply_markup=InlineKeyboardMarkup(kdbotz)
-        )
+        )    
         await asyncio.sleep(600)
         await k.edit("<b>Your message is successfully deleted!!!</b>")
         return
@@ -332,7 +347,7 @@ async def start(client, message):
                     InlineKeyboardButton("Verify", url=await get_token(client, message.from_user.id, f"https://telegram.me/{temp.U_NAME}?start="))
                 ]]
                 await message.reply_text(
-                    text="<b>You are not verified !\nKindly verify to continue !</b>",
+                    text=script.VERIFY_TXT.format( message.from_user.mention),
                     protect_content=True,
                     reply_markup=InlineKeyboardMarkup(btn)
                 )
@@ -395,9 +410,9 @@ async def start(client, message):
                 text=f"<b>📕Nᴀᴍᴇ ➠ : <code>{files.file_name}</code> \n\n🔗Sɪᴢᴇ ➠ : {get_size(files.file_size)}\n\n📂Fɪʟᴇ ʟɪɴᴋ ➠ : {g}\n\n<i>Note: ⚠️ ᴛʜɪs ᴍᴇssᴀɢᴇ ᴡɪʟʟ ʙᴇ ᴀᴜᴛᴏ ᴅᴇʟᴇᴛᴇᴅ ᴀғᴛᴇʀ 𝟷𝟶 ᴍɪɴᴜᴛᴇs.</i></b>", 
                 reply_markup=InlineKeyboardMarkup(kdbotz)
             )
-            await asyncio.sleep(600)
+            await asyncio.sleep(1200)
             await k.edit("<b>Your message is successfully deleted!!!</b>")
-            return    
+            return
     user = message.from_user.id
     files_ = await get_file_details(file_id)           
     if not files_:
@@ -408,7 +423,7 @@ async def start(client, message):
                     InlineKeyboardButton("Verify", url=await get_token(client, message.from_user.id, f"https://telegram.me/{temp.U_NAME}?start="))
                 ]]
                 await message.reply_text(
-                    text="<b>You are not verified !\nKindly verify to continue !</b>",
+                    text=script.VERIFY_TXT.format( message.from_user.mention),
                     protect_content=True,
                     reply_markup=InlineKeyboardMarkup(btn)
                 )
@@ -445,7 +460,7 @@ async def start(client, message):
             )
             filetype = msg.media
             file = getattr(msg, filetype.value)
-            title = '@i_Movieee ' + ' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@'), file.file_name.split()))
+            title = 'Fɪʟᴇ: ' + ' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@'), file.file_name.split()))
             size=get_size(file.file_size)
             f_caption = f"<code>{title}</code>"
             if CUSTOM_FILE_CAPTION:
@@ -463,7 +478,7 @@ async def start(client, message):
             pass
         return await message.reply('No such file exist.')
     files = files_[0]
-    title = '@i_Movieee ' + ' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@'), files.file_name.split()))
+    title = 'Fɪʟᴇ: ' + ' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@'), files.file_name.split()))
     size=get_size(files.file_size)
     f_caption=files.caption
     if CUSTOM_FILE_CAPTION:
@@ -473,13 +488,13 @@ async def start(client, message):
             logger.exception(e)
             f_caption=f_caption
     if f_caption is None:
-        f_caption = f"@i_Movieee {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@'), files.file_name.split()))}"
+        f_caption = f"Fɪʟᴇ:  {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@'), files.file_name.split()))}"
     if not await check_verification(client, message.from_user.id) and VERIFY == True:
         btn = [[
             InlineKeyboardButton("Verify", url=await get_token(client, message.from_user.id, f"https://telegram.me/{temp.U_NAME}?start="))
         ]]
         await message.reply_text(
-            text="<b>You are not verified !\nKindly verify to continue !</b>",
+            text=script.VERIFY_TXT.format( message.from_user.mention),
             protect_content=True,
             reply_markup=InlineKeyboardMarkup(btn)
         )
