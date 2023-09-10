@@ -359,12 +359,16 @@ async def start(client, message):
                     if IS_STREAM
                     else InlineKeyboardMarkup(
                         [
-                        [
-                          InlineKeyboardButton("✨ʙᴜʏ sᴜʙsᴄʀɪᴘᴛɪᴏɴ ʀᴇᴍᴏᴠᴇ ᴀᴅ✨", url=f"https://telegram.me/{temp.U_NAME}?start=buy")
-                         ]
+                            [
+                                InlineKeyboardButton('🫨ᴍᴏᴠɪᴇ ɢʀᴏᴜᴘ', url=f'https://t.me/{SUPPORT_CHAT}'),
+                                InlineKeyboardButton('ᴍᴏᴠɪᴇ ᴄʜᴀɴɴᴇʟ', url=CHNL_LNK)
+                            ],[
+                                InlineKeyboardButton("✨ʙᴜʏ sᴜʙsᴄʀɪᴘᴛɪᴏɴ ʀᴇᴍᴏᴠᴇ ᴀᴅ✨", url=f"https://telegram.me/{temp.U_NAME}?start=buy")
+                            ]
                         ]
                     )
                 )
+            )
             markup = await direct_gen_handler(file_reply)
             await file_reply.edit_reply_markup(markup) if markup else None
     
