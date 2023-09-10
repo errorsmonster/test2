@@ -57,6 +57,7 @@ IS_STREAM = bool(STREAM_BIN and STREAM_URL)
 
 # Others
 VERIFY = bool(environ.get('VERIFY', False))
+HOW_TO_VERIFY = environ.get('HOW_TO_VERIFY', 'https://t.me/+dysmJ1DLQDFmNWY1')
 SHORTLINK_URL = environ.get('SHORTLINK_URL', 'Zxlink.in')
 SHORTLINK_API = environ.get('SHORTLINK_API', '4205ff425fade7343f8fd9cc79dce620cac4b01f')
 SECOND_SHORTLINK_URL = environ.get('SECOND_SHORTLINK_URL', 'Zxlink.in')
