@@ -206,10 +206,21 @@ Tɪᴘ: Sᴇʟᴇᴄᴛ "Lᴀɴɢᴜᴀɢᴇs" ᴏʀ "Sᴇᴀsᴏɴs" Bᴜᴛᴛ
 
 ⚙️ sɪᴢᴇ : {file_size}"""
 
+ 
+    FORCE_SUB = """
+**⚠️ Pʟᴇᴀsᴇ ғᴏʟʟᴏᴡ ᴛʜɪs ʀᴜʟe ⚠️
+
+Iɴ ᴏʀᴅᴇʀ ᴛᴏ ɢᴇᴛ ᴛʜᴇ ᴍᴏᴠɪᴇ ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ ʏᴏᴜ.
+
+Yᴏᴜ ᴡɪʟʟ ʜᴀᴠᴇ ᴛᴏ ᴊᴏɪɴ ᴏᴜʀ ᴏғғɪᴄɪᴀʟ ᴏʀ ʙᴀᴄᴋ-ᴜᴘ ᴄʜᴀɴɴᴇʟ ғɪʀsᴛ.
+
+Tʜᴇɴ ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ '🔄 Tʀʏ Aɢᴀɪɴ' ʙᴜᴛᴛᴏɴ ʙᴇʟᴏᴡ.
+
+Aғᴛᴇʀ ᴛʜᴀᴛ ɪ'ʟʟ sᴇɴᴅ ʏᴏᴜ ᴛʜᴀᴛ ᴍᴏᴠɪᴇ ᴘʀɪᴠᴀᴛᴇʟʏ.**"""
+    
     IMDB_TEMPLATE_TXT = """
 <b>Query: {query}
 IMDb Data:
-
 🏷 Title: <a href={url}>{title}</a>
 🎭 Genres: {genres}
 📆 Year: <a href={url}/releaseinfo>{year}</a>
