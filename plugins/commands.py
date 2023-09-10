@@ -380,7 +380,7 @@ async def start(client, message):
         # await k.edit_text("<b>Your All Files/Videos is successfully deleted!!!</b>")
         # return    
         
-    elif data.startswith("all"):
+    elif data.startswith("files"):
         user = message.from_user.id
         if temp.SHORT.get(user)==None:
             await message.reply_text(text="<b>Please Search Again in Group</b>")
