@@ -345,7 +345,7 @@ async def start(client, message):
                 protect_content=True if pre == 'filep' else False,
                 reply_markup=(
                 InlineKeyboardMarkup(
-                        [
+                            [
                             [
                                 InlineKeyboardButton('Watch Online/ Fast Download', callback_data=f'gen_stream_link:{file_id}')
                             ],[
