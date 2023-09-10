@@ -347,7 +347,7 @@ async def start(client, message):
                     InlineKeyboardMarkup(
                         [
                             [
-                                InlineKeyboardButton('Watch Online/ Fast Download', callback_data=f'gen_stream_link:{file_id}')
+                                InlineKeyboardButton('Watch Online/ Fast Download', callback_data=f'gen_stream_link:{file_id}'),
                             ],[
                                 InlineKeyboardButton("✨ʙᴜʏ sᴜʙsᴄʀɪᴘᴛɪᴏɴ ʀᴇᴍᴏᴠᴇ ᴀᴅ✨", url=f"https://telegram.me/{temp.U_NAME}?start=buy")
                             ]
@@ -424,7 +424,7 @@ async def start(client, message):
                     InlineKeyboardMarkup(
                         [
                             [
-                                InlineKeyboardButton('Watch Online/ Fast Download', callback_data=f'gen_stream_link:{file_id}')
+                                InlineKeyboardButton('Watch Online/ Fast Download', callback_data=f'gen_stream_link:{file_id}'),
                             ],[
                                 InlineKeyboardButton("✨ʙᴜʏ sᴜʙsᴄʀɪᴘᴛɪᴏɴ ʀᴇᴍᴏᴠᴇ ᴀᴅ✨", url=f"https://telegram.me/{temp.U_NAME}?start=buy")
                             ]
@@ -497,7 +497,7 @@ async def start(client, message):
                     InlineKeyboardMarkup(
                         [
                             [
-                                InlineKeyboardButton('Watch Online/ Fast Download', callback_data=f'gen_stream_link:{file_id}')
+                                InlineKeyboardButton('Watch Online/ Fast Download', callback_data=f'gen_stream_link:{file_id}'),
                             ],[
                                 InlineKeyboardButton("✨ʙᴜʏ sᴜʙsᴄʀɪᴘᴛɪᴏɴ ʀᴇᴍᴏᴠᴇ ᴀᴅ✨", url=f"https://telegram.me/{temp.U_NAME}?start=buy")
                             ]
