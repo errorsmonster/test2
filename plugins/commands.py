@@ -449,6 +449,7 @@ async def start(client, message):
                         ]
                     )
                 )
+            )
             markup = await direct_gen_handler(file_reply)
             await file_reply.edit_reply_markup(markup) if markup else None
     
