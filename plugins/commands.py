@@ -499,7 +499,7 @@ async def start(client, message):
             reply_markup=InlineKeyboardMarkup(btn)
         )
         return
-file_reply = await client.send_cached_media(
+    reply_file = await client.send_cached_media(
         chat_id=message.from_user.id,
         file_id=file_id,
         caption=f_caption,
@@ -523,6 +523,7 @@ file_reply = await client.send_cached_media(
                         ]
                     )
                )
+          )
     markup = await direct_gen_handler(file_reply)
     await file_reply.edit_reply_markup(markup) if markup else None
     
