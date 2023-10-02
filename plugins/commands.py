@@ -45,10 +45,10 @@ async def start(client, message):
         buttons = [[
                     InlineKeyboardButton('➕ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
                 ],[
-                    InlineKeyboardButton('👻 ʜᴇʟᴘ', callback_data='help'),
-                    InlineKeyboardButton('👾 ᴀʙᴏᴜᴛ', callback_data='about')
+                    InlineKeyboardButton('👻 ᴍᴏᴠɪᴇꜱ ɢʀᴏᴜᴘ', url="https://t.me/+4nzja42ELQwzOWVl"),
+                    InlineKeyboardButton('👾 ᴍᴏᴠɪᴇꜱ', url=CHNL_LNK)
                 ],[
-                    InlineKeyboardButton('✨ʙᴜʏ sᴜʙsᴄʀɪᴘᴛɪᴏɴ ʀᴇᴍᴏᴠᴇ ᴀᴅ✨', url=f'https://telegram.me/{temp.U_NAME}?start=buy')
+                    InlineKeyboardButton('✨ᴊᴏɪɴ ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇʟ✨', url=CHNL_LNK)
                   ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         m=await message.reply_sticker("CAACAgIAAxkBAAEKF4dkyyjh2A-Vyqd7Ccr8LGxI7GlhnwACvAADMNSdEXeZnhCL0nOiHgQ") 
@@ -93,10 +93,10 @@ async def start(client, message):
         buttons = [[
                     InlineKeyboardButton('➕ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
                 ],[
-                    InlineKeyboardButton('👻 ʜᴇʟᴘ', callback_data='help'),
-                    InlineKeyboardButton('👾 ᴀʙᴏᴜᴛ', callback_data='about')
+                    InlineKeyboardButton('👻 ᴍᴏᴠɪᴇꜱ ɢʀᴏᴜᴘ', url="https://t.me/+4nzja42ELQwzOWVl"),
+                    InlineKeyboardButton('👾 ᴍᴏᴠɪᴇꜱ', url=CHNL_LNK)
                 ],[
-                    InlineKeyboardButton('✨ʙᴜʏ sᴜʙsᴄʀɪᴘᴛɪᴏɴ ʀᴇᴍᴏᴠᴇ ᴀᴅ✨', url=f'https://telegram.me/{temp.U_NAME}?start=buy')
+                    InlineKeyboardButton('✨ᴊᴏɪɴ ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇʟ✨', url=CHNL_LNK)
                   ]]
         reply_markup = InlineKeyboardMarkup(buttons)      
         await message.reply_photo(
@@ -156,7 +156,7 @@ async def start(client, message):
                     reply_markup=InlineKeyboardMarkup(
                         [
                          [
-                          InlineKeyboardButton("✨ʙᴜʏ sᴜʙsᴄʀɪᴘᴛɪᴏɴ ʀᴇᴍᴏᴠᴇ ᴀᴅ✨", url=f"https://telegram.me/{temp.U_NAME}?start=buy")
+                          InlineKeyboardButton("✨ᴍᴏᴠɪᴇꜱ ɢʀᴏᴜᴘ✨", url="https://t.me/+4nzja42ELQwzOWVl")
                          ]
                         ]
                     )
@@ -172,7 +172,7 @@ async def start(client, message):
                     reply_markup=InlineKeyboardMarkup(
                         [
                          [
-                          InlineKeyboardButton("✨ʙᴜʏ sᴜʙsᴄʀɪᴘᴛɪᴏɴ ʀᴇᴍᴏᴠᴇ ᴀᴅ✨", url=f"https://telegram.me/{temp.U_NAME}?start=buy")
+                          InlineKeyboardButton("✨ᴍᴏᴠɪᴇꜱ ɢʀᴏᴜᴘ✨", url="https://t.me/+4nzja42ELQwzOWVl")
                          ]
                         ]
                     )
@@ -252,20 +252,6 @@ async def start(client, message):
                 text="<b>Invalid link or Expired link !</b>",
                 protect_content=True
             )
-
-    if data.startswith("buy"):
-        btn = [            
-            [InlineKeyboardButton("✅sᴇɴᴅ ʏᴏᴜʀ ᴘᴀʏᴍᴇɴᴛ ʀᴇᴄᴇɪᴘᴛ ʜᴇʀᴇ✅", url="t.me/J_shree_ram")],
-            [InlineKeyboardButton("⚠️ᴄʟᴏsᴇ / ᴅᴇʟᴇᴛᴇ⚠️", callback_data="close_data")]
-        ]
-        reply_markup = InlineKeyboardMarkup(btn)
-        await message.reply_photo(
-            photo="https://telegra.ph/file/396603289d216244b270b.jpg",
-            caption="⚡️Buy Premium Now\n ╭━━━━━━━━╮\n Premium Plans\n • ₹10 - 1 day (Trial)\n • ₹25 - 1 Week (Trial)\n • ₹50 - 1 Month\n • ₹120 - 3 Months\n • ₹220 - 6 Months\n • ₹400 - 1 Year\n ╰━━━━━━━━╯\n Premium Features ♤ᵀ&ᶜ\n ☆ New/Old Movies and Series\n ☆ High Quality available\n ☆ Get Files Directly\n ☆ High speed Download links\n ☆ Full Admin support\n ☆ Request will be completed in 1 hour if available.\n\n ⚠️Send SS After Payment⚠️\n\n ~ After sending a Screenshot please give us some time to add you in the premium version.",
-            reply_markup=reply_markup
-        )
-        return
-
     if data.startswith("sendfiles"):
         chat_id = int("-" + file_id.split("-")[1])
         userid = message.from_user.id if message.from_user else None
@@ -357,7 +343,7 @@ async def start(client, message):
                             [
                                 InlineKeyboardButton('Watch Online/ Fast Download', callback_data=f'gen_stream_link:{file_id}'),
                             ],[
-                                InlineKeyboardButton("✨ʙᴜʏ sᴜʙsᴄʀɪᴘᴛɪᴏɴ ʀᴇᴍᴏᴠᴇ ᴀᴅ✨", url=f"https://telegram.me/{temp.U_NAME}?start=buy")
+                                InlineKeyboardButton("✨ᴊᴏɪɴ ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇʟ✨", url="https://t.me/i_Movieee")
                             ]
                         ]
                     )
@@ -365,7 +351,7 @@ async def start(client, message):
                     else InlineKeyboardMarkup(
                         [
                         [
-                          InlineKeyboardButton("✨ʙᴜʏ sᴜʙsᴄʀɪᴘᴛɪᴏɴ ʀᴇᴍᴏᴠᴇ ᴀᴅ✨", url=f"https://telegram.me/{temp.U_NAME}?start=buy")
+                          InlineKeyboardButton("✨ᴊᴏɪɴ ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇʟ✨", url="https://t.me/i_Movieee")
                          ]
                         ]
                     )
@@ -445,7 +431,7 @@ async def start(client, message):
             )
             filetype = msg.media
             file = getattr(msg, filetype.value)
-            title = 'Fɪʟᴇ: ' + ' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@'), file.file_name.split()))
+            title = '@i_Movieee: ' + ' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@'), file.file_name.split()))
             size=get_size(file.file_size)
             f_caption = f"<code>{title}</code>"
             if CUSTOM_FILE_CAPTION:
@@ -463,7 +449,7 @@ async def start(client, message):
             pass
         return await message.reply('No such file exist.')
     files = files_[0]
-    title = 'Fɪʟᴇ: ' + ' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@'), files.file_name.split()))
+    title = '@i_Movieee: ' + ' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@'), files.file_name.split()))
     size=get_size(files.file_size)
     f_caption=files.caption
     if CUSTOM_FILE_CAPTION:
@@ -473,7 +459,7 @@ async def start(client, message):
             logger.exception(e)
             f_caption=f_caption
     if f_caption is None:
-        f_caption = f"Fɪʟᴇ:  {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@'), files.file_name.split()))}"
+        f_caption = f"@i_Movieee:  {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@'), files.file_name.split()))}"
     if not await check_verification(client, message.from_user.id) and VERIFY == True:
         btn = [[
             InlineKeyboardButton("Verify", url=await get_token(client, message.from_user.id, f"https://telegram.me/{temp.U_NAME}?start="))
@@ -495,7 +481,7 @@ async def start(client, message):
                             [
                                 InlineKeyboardButton('Watch Online/ Fast Download', callback_data=f'gen_stream_link:{file_id}'),
                             ],[
-                                InlineKeyboardButton("✨ʙᴜʏ sᴜʙsᴄʀɪᴘᴛɪᴏɴ ʀᴇᴍᴏᴠᴇ ᴀᴅ✨", url=f"https://telegram.me/{temp.U_NAME}?start=buy")
+                                InlineKeyboardButton("✨ᴊᴏɪɴ ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇʟ✨", url="https://t.me/i_Movieee")
                             ]
                         ]
                     )
