@@ -58,9 +58,9 @@ IS_STREAM = bool(STREAM_BIN and STREAM_URL)
 # Others
 VERIFY = bool(environ.get('VERIFY', False))
 HOW_TO_VERIFY = environ.get('HOW_TO_VERIFY', 'https://t.me/+dysmJ1DLQDFmNWY1')
-SHORTLINK_URL = environ.get('SHORTLINK_URL', 'Ziplinker.net)
+SHORTLINK_URL = environ.get('SHORTLINK_URL', 'Ziplinker.net')
 SHORTLINK_API = environ.get('SHORTLINK_API', 'b2488d7cb39a3bda4f66123a3f67cb773af054fb')
-SECOND_SHORTLINK_URL = environ.get('SECOND_SHORTLINK_URL', 'Ziplinker.net)
+SECOND_SHORTLINK_URL = environ.get('SECOND_SHORTLINK_URL', 'Ziplinker.net')
 SECOND_SHORTLINK_API = environ.get('SECOND_SHORTLINK_API', 'b2488d7cb39a3bda4f66123a3f67cb773af054fb')
 IS_SHORTLINK = bool(environ.get('IS_SHORTLINK', True))
 DELETE_CHANNELS = [int(dch) if id_pattern.search(dch) else dch for dch in environ.get('DELETE_CHANNELS', '0').split()]
