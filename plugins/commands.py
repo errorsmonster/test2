@@ -145,7 +145,26 @@ async def start(client, message):
                     caption=f_caption,
                     reply_markup=InlineKeyboardMarkup( [ [ InlineKeyboardButton('Watch Online/ Fast Download', callback_data=f'gen_stream_link:{file_id}') ] ] ),
                     protect_content=msg.get('protect', False),
+                    reply_markup=(
+                    InlineKeyboardMarkup(
+                        [
+                            [
+                                InlineKeyboardButton('Watch Online/ Fast Download', callback_data=f'gen_stream_link:{file_id}'),
+                            ],[
+                                InlineKeyboardButton("✨ᴊᴏɪɴ ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇʟ✨", url="https://t.me/i_Movieee")
+                            ]
+                        ]
                     )
+                    if IS_STREAM
+                    else InlineKeyboardMarkup(
+                        [
+                        [
+                          InlineKeyboardButton("✨ᴊᴏɪɴ ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇʟ✨", url="https://t.me/i_Movieee")
+                         ]
+                        ]
+                    )
+               )
+            )
             except FloodWait as e:
                 await asyncio.sleep(e.x)
                 logger.warning(f"Floodwait of {e.x} sec.")
