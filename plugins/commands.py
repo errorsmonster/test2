@@ -143,7 +143,6 @@ async def start(client, message):
                     chat_id=message.from_user.id,
                     file_id=msg.get("file_id"),
                     caption=f_caption,
-                    reply_markup=InlineKeyboardMarkup( [ [ InlineKeyboardButton('Watch Online/ Fast Download', callback_data=f'gen_stream_link:{file_id}') ] ] ),
                     protect_content=msg.get('protect', False),
                     reply_markup=(
                     InlineKeyboardMarkup(
