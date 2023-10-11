@@ -141,30 +141,11 @@ async def start(client, message):
             try:
                 await client.send_cached_media(
                     chat_id=message.from_user.id,
-                    file_id=file_id,
+                    file_id=msg.get("file_id"),
                     caption=f_caption,
-                    protect_content=True if pre == 'filep' else False,
-                    reply_markup=(
-                    InlineKeyboardMarkup(
-                        [
-                            [
-                                InlineKeyboardButton('Watch Online/ Fast Download', callback_data=f'gen_stream_link:{file_id}'),
-                            ],[
-                                InlineKeyboardButton("✨ᴊᴏɪɴ ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇʟ✨", url="https://t.me/i_Movieee")
-                            ]
-                        ]
-                    )
-                    if IS_STREAM
-                    else InlineKeyboardMarkup(
-                        [
-                        [
-                          InlineKeyboardButton("✨ᴊᴏɪɴ ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇʟ✨", url="https://t.me/i_Movieee")
-                         ]
-                        ]
-                    )
-               )
-            )
-            except FloodWait as e:
+                    protect_content=msg.get('protect', False),
+            
+                except FloodWait as e:
                 await asyncio.sleep(e.x)
                 logger.warning(f"Floodwait of {e.x} sec.")
                 await client.send_cached_media(
