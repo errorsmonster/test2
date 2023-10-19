@@ -35,7 +35,6 @@ import logging
 #for force sub biisal
 from time import time
 import urllib.parse
-from Biisal import *
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.ERROR)
