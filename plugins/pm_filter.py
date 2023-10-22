@@ -34,7 +34,7 @@ from database.gfilters_mdb import (
 import logging
 #for force sub biisal
 from time import time
-import urllib.parse import quote_plus
+from urllib.parse import quote_plus
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.ERROR)
