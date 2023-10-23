@@ -1715,7 +1715,7 @@ async def auto_filter(client, msg, spoll=False):
         btn.insert(0, 
             [
                 InlineKeyboardButton("⭕️ ʟᴀɴɢᴜᴀɢᴇs ⭕️", callback_data=f"languages#{key}"),
-                InlineKeyboardButton("🔵ꜱᴇʟᴇᴄᴛ Sᴇᴀsᴏɴs 🔵", callback_data=f"seasons#{key}")
+                InlineKeyboardButton("🔵 Sᴇᴀsᴏɴs 🔵", callback_data=f"seasons#{key}")
             ]
         )
         btn.insert(0, [
@@ -1726,7 +1726,7 @@ async def auto_filter(client, msg, spoll=False):
         btn.insert(0, 
             [
                 InlineKeyboardButton("⭕️ ʟᴀɴɢᴜᴀɢᴇs ⭕️", callback_data=f"languages#{key}"),
-                InlineKeyboardButton("🔵 ꜱᴇʟᴇᴄᴛ Sᴇᴀsᴏɴs 🔵", callback_data=f"seasons#{key}")
+                InlineKeyboardButton("🔵 Sᴇᴀsᴏɴs 🔵", callback_data=f"seasons#{key}")
             ]
         )
         btn.insert(0, [
