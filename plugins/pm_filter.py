@@ -51,8 +51,6 @@ ENABLE_SHORTLINK = ""
 
 @Client.on_message(filters.group | filters.private & filters.text & filters.incoming)
 async def give_filter(client, message):
-    if@Client.on_message(filters.group | filters.private & filters.text & filters.incoming)
-async def give_filter(client, message):
     if message.chat.id != SUPPORT_CHAT_ID:
         manual = await manual_filters(client, message)
         if manual == False:
